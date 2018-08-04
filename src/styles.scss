@@ -260,6 +260,94 @@ a.btn-round svg {
   margin-top: 7px;
 }
 
-.login-page .card-login .input-group:last-child {
-  margin-bottom: 10px !important;
+.wrapper-full-page {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.footer {
+  padding: 2em;
+}
+
+.full-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+}
+
+.input-group-addon {
+  padding-right: 10px !important;
+}
+
+.card-body {
+  min-width: 300px;
+}
+
+.content {
+  padding-top: 10%;
+}
+
+@media screen and (max-width: 991px) {
+  .content {
+    padding-top: 30% !important;
+  }
+}
+
+.bottom-line {
+  border: 1px solid grey;
+}
+
+.btn-primary {
+  background-color: var(--button-primary-color) !important;
+  color: white !important;
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn.disabled {
+  opacity: 0.9;
+  background-color: grey !important;
+}
+
+.register-page {
+  .progress {
+    height: 1px;
+  }
+  .bg-info {
+    background-color: var(--button-primary-color) !important;
+  }
+  .input-group.input-group-focus .input-group-prepend .input-group-text {
+    border-left: 1px solid #f96332 !important;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+ngb-datepicker .ngb-dp-header ngb-datepicker-navigation .ngb-dp-arrow-btn .ngb-dp-navigation-chevron {
+  width: 0px !important;
+  height: 0px !important;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #f96332;
+  border-top: none;
+}
+
+.ngb-dp-navigation-chevron {
+  transform: rotate(-90deg) !important;
+}
+
+ngb-datepicker .ngb-dp-header ngb-datepicker-navigation .ngb-dp-arrow-btn .ngb-dp-navigation-chevron:before {
+  display: none;
+}
+
+.ngb-dp-arrow.right .ngb-dp-navigation-chevron {
+  transform: rotate(90deg) !important;
 }

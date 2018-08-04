@@ -1,3 +1,217 @@
-<p>
-  register works!
-</p>
+<div class="wrapper wrapper-full-page " style=" background-image: url('/assets/images/bg14.jpg');">
+  <div class="full-page register-page section-image" filter-color="black">
+    <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+    <div class="content">
+      <div class="container">
+        <div class="col-md-12 ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-4 ml-auto mr-auto">
+              <div class="info info-horizontal">
+                <div class="icon icon-primary">
+                  <i class="now-ui-icons media-2_sound-wave"></i>
+                </div>
+                <div class="description">
+                  <h5 class="info-title">Marketing</h5>
+                  <p class="description">
+                    We've created the marketing campaign of the website. It was a very interesting collaboration.
+                  </p>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-primary">
+                  <i class="now-ui-icons media-1_button-pause"></i>
+                </div>
+                <div class="description">
+                  <h5 class="info-title">Fully Coded in HTML5</h5>
+                  <p class="description">
+                    We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.
+                  </p>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-info">
+                  <i class="now-ui-icons users_single-02"></i>
+                </div>
+                <div class="description">
+                  <h5 class="info-title">Built Audience</h5>
+                  <p class="description">
+                    There is also a Fully Customizable CMS Admin Dashboard for this product.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mr-auto">
+              <div class="card card-signup">
+                <div class="card-body">
+                  <h4 class="card-title text-center">
+                    <i (click)="previous()" [hidden]="step == 0" class="fas fa-chevron-left pointer"></i>Sign Up</h4>
+                  <p>
+                    <ngb-progressbar type="info" [value]="step" [max]="max"></ngb-progressbar>
+                  </p>
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 0">
+                    <p class="text-center" style=" margin-top: 1.75rem;">What's your name?</p>
+                    <div class="input-group" [class.input-group-focus]="focus1">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="now-ui-icons users_circle-08"></i>
+                        </span>
+                      </div>
+                      <input class="form-control" placeholder="First Name..." type="text" (focus)="focus1=true" (blur)="focus1=false">
+                    </div>
+                    <div class="input-group" [class.input-group-focus]="lastname">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="now-ui-icons text_caps-small"></i>
+                        </span>
+                      </div>
+                      <input class="form-control" placeholder="Last Name..." type="text" (focus)="lastname=true" (blur)="lastname=false">
+                    </div>
+                  </form>
+
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 1">
+                    <p class="text-center" style=" margin-top: 1.75rem;">Set up your password
+                      <br/>
+                      <small>The passowrd should be at least 8 characters</small>
+                    </p>
+                    <div class="input-group" [class.input-group-focus]="password">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="now-ui-icons objects_key-25"></i>
+                        </span>
+                      </div>
+                      <input class="form-control" placeholder="Password..." type="password" (focus)="password=true" (blur)="password=false">
+                    </div>
+                  </form>
+
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 2">
+                    <p class="text-center" style=" margin-top: 1.75rem;">What's your email?</p>
+                    <div class="input-group" [class.input-group-focus]="email">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="now-ui-icons ui-1_email-85"></i>
+                        </span>
+                      </div>
+                      <input class="form-control" placeholder="Email..." type="text" (focus)="email=true" (blur)="email=false">
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-sign"></span>
+                        I agree to get promotions
+                      </label>
+                    </div>
+                  </form>
+
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 3" style="margin-bottom: 30px">
+                    <p class="text-center" style=" margin-top: 1.75rem;">What's your birthday?</p>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="now-ui-icons ui-1_calendar-60"></i>
+                        </span>
+                      </div>
+
+                      <input class="form-control" (click)="d.toggle()" placeholder="yyyy-mm-dd" type="text" name="dp" [(ngModel)]="model" ngbDatepicker
+                        #d="ngbDatepicker">
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox">
+                        <span class="form-check-sign"></span>
+                        I approve I'm 18 or older
+                      </label>
+                    </div>
+                  </form>
+
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 4">
+                    <p class="text-center" style=" margin-top: 1.75rem;">What's your mobile number?</p>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <input type="text" value="" placeholder="Code" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="form-group">
+                          <input type="text" value="" placeholder="Number" class="form-control" [(ngModel)]="phone" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-check">
+                      <p style="font-size: 10px">By tapping 'Sign Up',
+                        <br/> I agree to the
+                        <a>Terms of Service</a> and
+                        <a>Privacy Policy</a>
+                      </p>
+                    </div>
+                  </form>
+
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 5">
+                    <p class="text-center" style=" margin-top: 1.75rem;">Enter the confirmation code sent to
+                      <a>{{phone}}</a>
+                    </p>
+                    <div class="row text-center">
+                      <div class="col-sm-3 padding-5">
+                        <div class="form-group">
+                          <input type="number" value="" placeholder="Code" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col-sm-3 padding-5">
+                        <div class="form-group">
+                          <input type="number" value="" placeholder="Code" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col-sm-3 padding-5">
+                        <div class="form-group">
+                          <input type="number" value="" placeholder="Code" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col-sm-3 padding-5">
+                        <div class="form-group">
+                          <input type="number" value="" placeholder="Code" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-check">
+                      <a>Send code again</a>
+                    </div>
+                  </form>
+
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 6">
+                    <p class="text-center" style=" margin-top: 1.75rem;">Choose your profile picture
+                    </p>
+                    <div class="col-sm-6" style="margin: auto">
+                      <img src="assets/images/julie.jpg" alt="Circle Image" class="rounded-circle">
+                    </div>
+                    <div class="form-check">
+                      <a>Add picture</a>
+                    </div>
+                  </form>
+
+                  <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 7">
+
+                    <img src="assets/images/main-logo.png" style="padding: 10px;">
+                    <p class="text-center" style="font-size: 10px;">Congratulation! Your all set!
+                      <br> We really happy to have you onboard with us :)
+                      <br> Let's dive in</p>
+                  </form>
+
+                  <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                    <a class="btn btn-primary btn-lg" (click)="next()">{{ step == 7 ? "LET'S DO IT!" : 'NEXT'}}</a>
+                  </div>
+
+                  <div class="text-center login-text" style=" margin-bottom: 0.75rem;">
+                    <span>Already have an account? </span>
+                    <a [routerLink]="['/login']" class="">
+                      <strong>Login</strong>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

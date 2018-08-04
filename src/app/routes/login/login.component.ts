@@ -1,26 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    providers: [HttpClient]
+    providers: [ AuthService]
 })
 export class LoginComponent implements OnInit {
     email: string = '';
     password: string = '';
     isEmailValidated: boolean = false;
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService, private router: Router, private sharedService:SharedService) { }
 
     ngOnInit() {
     }
 
     login() {
-        this.authService.login({ email: this.email, password: this.password }).subscribe(res => {
-            console.log(res);
-            
+        this.authService.authenticate({ email: this.email, password: this.password }).subscribe(user => {
+            if(user.token) {
+                this.sharedService.toggle(user.token);
+                this.router.navigate(['/']);
+            }
         })
     }
 

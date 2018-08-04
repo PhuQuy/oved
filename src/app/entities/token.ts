@@ -1,7 +1,6 @@
 export class Token {
 
   token: string = null;
-  expire: string = null;
 
   constructor(data?: any) {
     if (data) {

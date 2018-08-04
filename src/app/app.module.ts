@@ -18,7 +18,8 @@ import { HomeComponent } from './routes/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
-
+import { AuthGuard } from './core/auth.guard';
+import { SharedService } from './services/shared.service';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,9 @@ import { RegisterComponent } from './routes/register/register.component';
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        }
+        },
+        AuthGuard,
+        SharedService
     ],
     bootstrap: [AppComponent]
 })

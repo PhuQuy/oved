@@ -2,7 +2,7 @@
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" [routerLink]="['/']" placement="bottom" ngbTooltip="Test">
-        <img src="assets/images/main-logo.png" >
+        <img src="assets/images/main-logo.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02"
         aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
@@ -14,33 +14,15 @@
     <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#" target="_blank">
+          <a class="nav-link" [routerLink]="['/sign-up']">
             <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-            <p>Download</p>
+            <p>Sign Up</p>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" target="_blank">
+          <a class="nav-link pointer" (click)="logout()">
             <i class="now-ui-icons files_paper"></i>
-            <p>Components</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Twitter">
-            <i class="fab fa-twitter"></i>
-            <p class="d-lg-none d-xl-none">Twitter</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Like us on Facebook">
-            <i class="fab fa-facebook-square"></i>
-            <p class="d-lg-none d-xl-none">Facebook</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Instagram">
-            <i class="fab fa-instagram"></i>
-            <p class="d-lg-none d-xl-none">Instagram</p>
+            <p>{{token ? 'Log out' : 'Login'}}</p>
           </a>
         </li>
       </ul>

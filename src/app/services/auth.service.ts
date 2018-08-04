@@ -18,7 +18,7 @@ export class AuthService extends BaseService {
             );
     }
 
-    login(body: any): Observable<Token> {
+    authenticate(body: any): Observable<Token> {
         return this.http
             .post(`${this.apiUrl}`, { ...body, request: 'login' })
             .pipe(

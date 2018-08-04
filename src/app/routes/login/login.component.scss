@@ -252,17 +252,6 @@
   margin-bottom: 55px;
 }
 
-.btn-primary {
-  background-color: var(--button-primary-color);
-}
-
-.btn:disabled,
-.btn[disabled],
-.btn.disabled {
-  opacity: 0.9;
-  background-color: grey;
-}
-
 .login-text {
   color: white;
   font-size: 1.2em;

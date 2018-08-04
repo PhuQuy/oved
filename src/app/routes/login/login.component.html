@@ -4,7 +4,7 @@
     <div class="content">
       <div class="container">
         <div class="col-md-6 ml-auto mr-auto">
-          <form class="form" (ngSubmit)="loginByEmailAndPassword()">
+          <form class="form" (ngSubmit)="login()">
             <div class="card card-login card-plain">
               <div class="logo-container">
                 <img src="assets/images/main-logo.png">
@@ -30,10 +30,10 @@
                 <span> {{error}}</span>
               </div>
               <div class="footer">
-                <button type="submit" [disabled]="!password || !isEmailValidated" class="btn btn-primary btn-lg btn-block mb-3" (click)="login()">LOGIN</button>
+                <button type="submit" [disabled]="!password || !isEmailValidated" class="btn btn-primary btn-lg btn-block mb-3">LOGIN</button>
               </div>
               <div class="text-center login-text">
-                <span>Don't have an account yet? </span><a [routerLink]="['/register']" class=""><strong>Sign Up</strong></a>
+                <span>Don't have an account yet? </span><a [routerLink]="['/sign-up']" class=""><strong>Sign Up</strong></a>
               </div>
             </div>
           </form>
