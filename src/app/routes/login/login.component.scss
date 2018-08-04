@@ -1,0 +1,269 @@
+.wrapper-full-page {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.login-page .card-login {
+  border-radius: 0.25rem;
+  padding-bottom: 0.7rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.footer {
+  padding: 2em;
+}
+
+.full-page {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+}
+
+.input-group-addon {
+  padding-right: 10px !important;
+}
+
+.card-body {
+  min-width: 300px;
+}
+
+.content {
+  padding-top: 10%;
+}
+
+@media screen and (max-width: 991px) {
+  .content {
+    padding-top: 30% !important;
+  }
+}
+
+.login-page .card-login.card-plain .form-group.no-border .form-control,
+.login-page .card-login.card-plain .input-group.no-border .form-control {
+  background-color: hsla(0, 0%, 100%, .1);
+  color: #fff;
+}
+
+.login-page .card-login.card-plain .form-control {
+  border: none;
+  color: #fff;
+}
+
+.form-group.no-border.form-control-lg .form-control,
+.input-group.no-border.form-control-lg .form-control {
+  padding: 15px 19px;
+}
+
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:first-child>.btn:not(:first-child),
+.input-group-btn:last-child>.dropdown-toggle {
+  border-left: 0;
+}
+
+.form-group.form-control-lg .input-group-addon+.form-control,
+.input-group.form-control-lg .input-group-addon+.form-control {
+  padding: 15px 18px 15px 16px;
+}
+
+.form-group.no-border .form-control,
+.input-group.no-border .form-control {
+  padding: 11px 19px;
+}
+
+.form-group.form-control-lg .form-control,
+.input-group.form-control-lg .form-control {
+  padding: 14px 18px;
+}
+
+.input-group .form-control:not(:first-child),
+.input-group-addon:not(:first-child),
+.input-group-btn:not(:first-child)>.btn,
+.input-group-btn:not(:first-child)>.btn-group>.btn,
+.input-group-btn:not(:first-child)>.dropdown-toggle,
+.input-group-btn:not(:last-child)>.btn-group:not(:first-child)>.btn,
+.input-group-btn:not(:last-child)>.btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group .form-control:active,
+.input-group .form-control:focus,
+.input-group .form-control:hover {
+  z-index: 3;
+}
+
+.input-group-addon+.form-control,
+.input-group-addon~.form-control {
+  padding-left: 18px;
+}
+
+.form-group .form-control,
+.input-group .form-control {
+  padding: 10px 18px;
+}
+
+.input-group .form-control,
+.input-group-addon,
+.input-group-btn {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+.form-control {
+  background-color: transparent;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  color: #2c2c2c;
+  line-height: normal;
+  font-size: 0.8571em;
+  -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.25;
+  background-image: none;
+  background-clip: padding-box;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+}
+
+.login-page .card-login.card-plain .form-group.no-border .input-group-addon,
+.login-page .card-login.card-plain .input-group-addon,
+.login-page .card-login.card-plain .input-group.no-border .input-group-addon {
+  color: hsla(0, 0%, 100%, .8);
+}
+
+.login-page .card-login.card-plain .form-group.no-border .input-group-addon,
+.login-page .card-login.card-plain .input-group.no-border .input-group-addon {
+  background-color: hsla(0, 0%, 100%, .1);
+  border: none;
+}
+
+.login-page .card-login.card-plain .input-group-addon {
+  background-color: transparent;
+  border-color: hsla(0, 0%, 100%, .5);
+}
+
+.form-group.no-border.form-control-lg .input-group-addon,
+.input-group.no-border.form-control-lg .input-group-addon {
+  padding: 15px 0 15px 19px;
+}
+
+.form-group.no-border .input-group-addon,
+.input-group.no-border .input-group-addon {
+  padding: 11px 0 11px 19px;
+  background-color: hsla(0, 0%, 87%, .3);
+  border: none;
+}
+
+.form-group.form-control-lg .input-group-addon,
+.input-group.form-control-lg .input-group-addon {
+  padding: 14px 0 15px 18px;
+}
+
+.input-group-addon {
+  padding-right: 10px !important;
+}
+
+.input-group .form-control:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child>.dropdown-toggle,
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
+  border-right: 0;
+}
+
+.form-group .input-group-addon,
+.input-group .input-group-addon {
+  padding: 10px 0 10px 18px;
+}
+
+.input-group-addon:not(:last-child) {
+  border-right: 0;
+}
+
+.input-group .form-control:not(:last-child),
+.input-group-addon:not(:last-child),
+.input-group-btn:not(:first-child)>.btn-group:not(:last-child)>.btn,
+.input-group-btn:not(:first-child)>.btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:not(:last-child)>.btn,
+.input-group-btn:not(:last-child)>.btn-group>.btn,
+.input-group-btn:not(:last-child)>.dropdown-toggle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.has-danger.input-group-focus .input-group-addon,
+.has-success .input-group-addon,
+.input-group-addon {
+  background-color: #fff;
+}
+
+.input-group-addon {
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  color: #555;
+  -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.input-group-addon {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.input-group-addon,
+.input-group-btn {
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.login-page .card-login .logo-container {
+  width: 165px;
+  margin: 0 auto;
+  margin-bottom: 55px;
+}
+
+.btn-primary {
+  background-color: var(--button-primary-color);
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn.disabled {
+  opacity: 0.9;
+  background-color: grey;
+}
+
+.login-text {
+  color: white;
+  font-size: 1.2em;
+}

@@ -1,4 +1,4 @@
-<navbar></navbar>
+<app-navbar></app-navbar>
 
 <div *ngIf="loading" class="loader">
   <div class="middle">
@@ -9,6 +9,8 @@
   </div>
 </div>
 <div #animateChild [ngClass]="getPage(appOutlet)" [style.visibility]="!loading ? 'visible' : 'hidden'">
-  <router-outlet #appOutlet="outlet"></router-outlet>
-  <root-footer></root-footer>
+  <perfect-scrollbar style="max-height: 100vh;" [config]="config">
+    <router-outlet #appOutlet="outlet"></router-outlet>
+    <root-footer></root-footer>
+  </perfect-scrollbar>
 </div>

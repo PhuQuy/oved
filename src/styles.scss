@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
 /* You can add global styles to this file, and also import other style files */
 
 @import "~bootstrap/scss/bootstrap.scss";
 /* cyrillic-ext */
 
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
@@ -227,6 +229,7 @@
   --menu-size: 1.5em;
   --font-color: #ababab;
   --main-bg-strong-color: #292929;
+  --button-primary-color: rgb(222, 37, 105);
 }
 
 body {
@@ -237,6 +240,10 @@ body {
   color: #c9c9c9;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+a {
+  color: var(--button-primary-color) !important;
 }
 
 .navbar .navbar-nav .nav-link:not(.btn) svg.svg-inline--fa,
@@ -250,5 +257,9 @@ svg.svg-inline--fa {
 }
 
 a.btn-round svg {
-    margin-top: 7px;
+  margin-top: 7px;
+}
+
+.login-page .card-login .input-group:last-child {
+  margin-bottom: 10px !important;
 }

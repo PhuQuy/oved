@@ -1,0 +1,66 @@
+.navbar-expand-lg {
+  background: var(--main-bg-color);
+  height: 77px;
+  background-color: rgba(41, 41, 41, 0.8);
+  padding-top: 20px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-transparent {
+  box-shadow: none !important;
+}
+
+.nav-link p {
+  font-size: var(--menu-size);
+  text-transform: none;
+  display: inline-block;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.navbar p {
+  line-height: 2;
+}
+
+.navbar-brand img {
+  width: 130px;
+}
+@media screen and (max-width: 991px) {
+  .navbar-brand img {
+    top: -14px;
+  }
+
+  .fixed-button {
+    bottom: 10px !important;
+    right: 23px !important;
+  }
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 50px;
+  z-index: 11;
+  right: 63px;
+}
+
+.fixed-button:hover {
+  background-color: #e25426;
+  border-color: #e25426;
+  color: white !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #e25426;
+  border-color: #e25426;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(226, 84, 38, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(226, 84, 38, 0.5);
+}
