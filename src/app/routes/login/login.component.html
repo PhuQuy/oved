@@ -23,17 +23,22 @@
                   <input type="password" [(ngModel)]="password" placeholder="Password" class="form-control" name="password">
                 </div>
               </div>
+              <div class="text-danger login-text " style="text-align:center;margin-top: -30px;
+              margin-bottom: 10px;" *ngIf="error">
+                <span> {{error}}</span>
+              </div>
               <div class="text-center login-text ">
                 <a [routerLink]="['/']" class="">Forgot your password?</a>
               </div>
-              <div class="text-danger login-text " style="text-align:center" *ngIf="error">
-                <span> {{error}}</span>
-              </div>
+
               <div class="footer">
                 <button type="submit" [disabled]="!password || !isEmailValidated" class="btn btn-primary btn-lg btn-block mb-3">LOGIN</button>
               </div>
               <div class="text-center login-text">
-                <span>Don't have an account yet? </span><a [routerLink]="['/sign-up']" class=""><strong>Sign Up</strong></a>
+                <span>Don't have an account yet? </span>
+                <a [routerLink]="['/sign-up']" class="">
+                  <strong>Sign Up</strong>
+                </a>
               </div>
             </div>
           </form>

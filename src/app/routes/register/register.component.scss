@@ -30,3 +30,9 @@ input:focus>.input-group {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: white;
+    color: #888;
+    cursor: pointer
+}

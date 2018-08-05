@@ -5,7 +5,7 @@
       <div class="container">
         <div class="col-md-12 ml-auto mr-auto">
           <div class="row">
-            <div class="col-md-4 ml-auto mr-auto">
+            <div class="col-md-4 ml-auto mr-auto info-register">
               <div class="info info-horizontal">
                 <div class="icon icon-primary">
                   <i class="now-ui-icons media-2_sound-wave"></i>
@@ -40,7 +40,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mr-auto">
+            <div class="col-md-4 mr-auto main-register">
               <div class="card card-signup">
                 <div class="card-body">
                   <h4 class="card-title text-center">
@@ -56,7 +56,8 @@
                           <i class="now-ui-icons users_circle-08"></i>
                         </span>
                       </div>
-                      <input class="form-control" placeholder="First Name..." type="text" (focus)="focus1=true" (blur)="focus1=false">
+                      <input class="form-control" placeholder="First Name..." name="first_name" [(ngModel)]="register.first_name" type="text" (focus)="focus1=true"
+                        (blur)="focus1=false">
                     </div>
                     <div class="input-group" [class.input-group-focus]="lastname">
                       <div class="input-group-prepend">
@@ -64,7 +65,12 @@
                           <i class="now-ui-icons text_caps-small"></i>
                         </span>
                       </div>
-                      <input class="form-control" placeholder="Last Name..." type="text" (focus)="lastname=true" (blur)="lastname=false">
+                      <input class="form-control" placeholder="Last Name..." name="last_name" [(ngModel)]="register.last_name" type="text" (focus)="lastname=true"
+                        (blur)="lastname=false">
+                    </div>
+
+                    <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                      <button type="button" [disabled]="!register.last_name || !register.first_name" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">NEXT</button>
                     </div>
                   </form>
 
@@ -79,7 +85,11 @@
                           <i class="now-ui-icons objects_key-25"></i>
                         </span>
                       </div>
-                      <input class="form-control" placeholder="Password..." type="password" (focus)="password=true" (blur)="password=false">
+                      <input class="form-control" placeholder="Password..." name="passowrd" [(ngModel)]="register.password" type="password" (focus)="password=true"
+                        (blur)="password=false">
+                    </div>
+                    <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                      <button type="button" [disabled]="register.password.length < 8 " (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">NEXT</button>
                     </div>
                   </form>
 
@@ -91,14 +101,18 @@
                           <i class="now-ui-icons ui-1_email-85"></i>
                         </span>
                       </div>
-                      <input class="form-control" placeholder="Email..." type="text" (focus)="email=true" (blur)="email=false">
+                      <input class="form-control" placeholder="Email..." name="email" [(ngModel)]="register.email" type="text" (focus)="email=true"
+                        (change)="validateEmail($event.target.value)" (blur)="email=false">
                     </div>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox">
+                        <input class="form-check-input" type="checkbox" checked>
                         <span class="form-check-sign"></span>
                         I agree to get promotions
                       </label>
+                    </div>
+                    <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                      <button type="button" [disabled]="!isEmailValidated" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">NEXT</button>
                     </div>
                   </form>
 
@@ -111,29 +125,35 @@
                         </span>
                       </div>
 
-                      <input class="form-control" (click)="d.toggle()" placeholder="yyyy-mm-dd" type="text" name="dp" [(ngModel)]="model" ngbDatepicker
-                        #d="ngbDatepicker">
+                      <input class="form-control" (click)="d.toggle()" readonly name="ngbDatepicker" placeholder="yyyy-mm-dd" type="text" name="dp"
+                        [(ngModel)]="register.birthday" ngbDatepicker #d="ngbDatepicker" [minDate]="minDate">
                     </div>
                     <div class="form-check">
                       <label class="form-check-label">
                         <input class="form-check-input" type="checkbox">
-                        <span class="form-check-sign"></span>
+                        <span class="form-check-sign" (click)="et = !et"></span>
                         I approve I'm 18 or older
                       </label>
+                    </div>
+
+                    <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                      <button type="button" [disabled]="!register.birthday || !et" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">NEXT</button>
                     </div>
                   </form>
 
                   <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 4">
                     <p class="text-center" style=" margin-top: 1.75rem;">What's your mobile number?</p>
                     <div class="row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-5" style="padding-right: 0px;">
                         <div class="form-group">
-                          <input type="text" value="" placeholder="Code" class="form-control" />
+                          <select class="form-control" id="" [(ngModel)]="countryCode.code" placeholder="Search country" name="countryCode">
+                            <option *ngFor="let code of countryCodes" [value]="code.code" [selected]="code.code == 'VN'">{{code.code}} + {{code.area_code}}</option>
+                          </select>
                         </div>
                       </div>
-                      <div class="col-sm-8">
+                      <div class="col-sm-7" style="padding-left: 5px;">
                         <div class="form-group">
-                          <input type="text" value="" placeholder="Number" class="form-control" [(ngModel)]="phone" />
+                          <input type="text" value="" placeholder="Number" name="phone" class="form-control" [(ngModel)]="phone" />
                         </div>
                       </div>
                     </div>
@@ -144,36 +164,54 @@
                         <a>Privacy Policy</a>
                       </p>
                     </div>
+
+                    <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                      <button type="button" [disabled]="phone.length < 7" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">SEND CONFIRMATION CODE</button>
+                    </div>
                   </form>
 
                   <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 5">
                     <p class="text-center" style=" margin-top: 1.75rem;">Enter the confirmation code sent to
-                      <a>{{phone}}</a>
+                      <a>{{register.phone}}</a>
                     </p>
                     <div class="row text-center">
-                      <div class="col-sm-3 padding-5">
+                      <div class="col-sm-2 padding-5" style="margin-left: 26px;">
                         <div class="form-group">
-                          <input type="number" value="" placeholder="Code" class="form-control" />
+                          <input type="text" class="form-control" #numberRef1 (keypress)="nextFocus1($event)" [(ngModel)]="number1" name="number01"
+                            autocomplete="off" />
                         </div>
                       </div>
-                      <div class="col-sm-3 padding-5">
+                      <div class="col-sm-2 padding-5">
                         <div class="form-group">
-                          <input type="number" value="" placeholder="Code" class="form-control" />
+                          <input type="text" class="form-control" #numberRef2 (keypress)="nextFocus2($event)" [(ngModel)]="number2" name="number02"
+                            autocomplete="off" />
                         </div>
                       </div>
-                      <div class="col-sm-3 padding-5">
+                      <div class="col-sm-2 padding-5">
                         <div class="form-group">
-                          <input type="number" value="" placeholder="Code" class="form-control" />
+                          <input type="text" class="form-control" #numberRef3 (keypress)="nextFocus3($event)" [(ngModel)]="number3" name="number03"
+                            autocomplete="off" />
                         </div>
                       </div>
-                      <div class="col-sm-3 padding-5">
+                      <div class="col-sm-2 padding-5">
                         <div class="form-group">
-                          <input type="number" value="" placeholder="Code" class="form-control" />
+                          <input type="text" class="form-control" #numberRef4 (keypress)="nextFocus4($event)" [(ngModel)]="number4" name="number04"
+                            autocomplete="off" />
+                        </div>
+                      </div>
+                      <div class="col-sm-2 padding-5">
+                        <div class="form-group">
+                          <input type="text" class="form-control" #numberRef5 [(ngModel)]="number5" (keypress)="nextFocus5($event)" name="number05"
+                            autocomplete="off" />
                         </div>
                       </div>
                     </div>
                     <div class="form-check">
                       <a>Send code again</a>
+                    </div>
+
+                    <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                      <button type="button" [disabled]="!number1 || !number2 || !number3 || !number4 || !number5" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">CONFIRM CODE</button>
                     </div>
                   </form>
 
@@ -184,23 +222,34 @@
                       <img src="assets/images/julie.jpg" alt="Circle Image" class="rounded-circle">
                     </div>
                     <div class="form-check">
-                      <a>Add picture</a>
+                      <a class="pointer">Add picture</a>
+                    </div>
+
+                    <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
+                      <button type="button" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">NEXT</button>
+                    </div>
+
+                    <div class="form-check" style="margin-top: -20px; font-size: 14px; margin-bottom: 10px;">
+                      <a class="pointer" (click)="next()">Skip this step</a>
                     </div>
                   </form>
 
                   <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 7">
 
                     <img src="assets/images/main-logo.png" style="padding: 10px;">
-                    <p class="text-center" style="font-size: 10px;">Congratulation! Your all set!
+                    <p class="text-center" style="font-size: 10px; margin-top: 20px">Congratulation! Your all set!
                       <br> We really happy to have you onboard with us :)
                       <br> Let's dive in</p>
+
+
+                    <div class="text-center" style="margin-top: 90px; margin-bottom: 10px;">
+                      <button type="button" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">LET'S DO IT!</button>
+                    </div>
                   </form>
 
-                  <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
-                    <a class="btn btn-primary btn-lg" (click)="next()">{{ step == 7 ? "LET'S DO IT!" : 'NEXT'}}</a>
-                  </div>
 
-                  <div class="text-center login-text" style=" margin-bottom: 0.75rem;">
+
+                  <div class="text-center login-text" style=" margin-bottom: 0.75rem;" [hidden]="step == max">
                     <span>Already have an account? </span>
                     <a [routerLink]="['/login']" class="">
                       <strong>Login</strong>

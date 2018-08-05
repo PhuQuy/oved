@@ -3,6 +3,8 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 import { Auth } from '../../entities/auth';
 import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterComponent } from '../../routes/register/register.component';
 
 @Component({
     selector: 'app-navbar',
@@ -22,13 +24,17 @@ export class NavbarComponent implements OnInit {
         }
     }
     token;
-    constructor(public location: Location, private element: ElementRef, private router: Router, private sharedService: SharedService) {
+    constructor(public location: Location, private element: ElementRef, private router: Router, private sharedService: SharedService, private modalService: NgbModal) {
         this.sidebarVisible = false;
         sharedService.change.subscribe(token => {
             if (token) {
                 this.token = token
             }
         })
+    }
+
+    signUp() {
+        this.modalService.open(RegisterComponent);
     }
 
     ngOnInit() {

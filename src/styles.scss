@@ -351,3 +351,27 @@ ngb-datepicker .ngb-dp-header ngb-datepicker-navigation .ngb-dp-arrow-btn .ngb-d
 .ngb-dp-arrow.right .ngb-dp-navigation-chevron {
   transform: rotate(90deg) !important;
 }
+
+ngb-modal-window {
+  .info-register {
+    display: none;
+  }
+  .main-register {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+  .wrapper-full-page {
+    min-height: 0px !important;
+    background-image: none !important;
+    background-color: transparent;
+  }
+  .full-page {
+    min-height: 0px !important;
+    background-color: transparent;
+  }
+  .modal-content {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

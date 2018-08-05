@@ -12,6 +12,7 @@ import { SharedService } from '../../services/shared.service';
 export class LoginComponent implements OnInit {
     email: string = '';
     password: string = '';
+    error: string = '';
     isEmailValidated: boolean = false;
     constructor(private authService: AuthService, private router: Router, private sharedService:SharedService) { }
 
@@ -23,6 +24,8 @@ export class LoginComponent implements OnInit {
             if(user.token) {
                 this.sharedService.toggle(user.token);
                 this.router.navigate(['/']);
+            } else {
+                this.error = user['message'] + '! Try again';
             }
         })
     }

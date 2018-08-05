@@ -9,21 +9,16 @@ import { Token } from '../entities/token';
     providedIn: 'root'
 })
 export class AuthService extends BaseService {
-    register(body: any): Observable<any> {
-        return this.http
-            .post(`${this.apiUrl}`, { ...body, request: 'register' })
-            .pipe(
-                map((res) => res),
-                catchError(this.handleError)
-            );
-    }
-
     authenticate(body: any): Observable<Token> {
         return this.http
             .post(`${this.apiUrl}`, { ...body, request: 'login' })
             .pipe(
                 map((data) => {
-                    return Auth.setToken(data);
+                    if(data.token) {
+                        return Auth.setToken(data);
+                    } else {
+                        return data;
+                    }
                 }),
                 catchError(this.handleError)
             );
