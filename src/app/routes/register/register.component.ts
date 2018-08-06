@@ -14,7 +14,10 @@ export class RegisterComponent implements OnInit {
     step = 0;
     max = 7;
     phone = '';
-
+    lastname;
+    password;
+    email;
+    focus1;
     number1 = '';
     number2 = '';
     number3 = '';
