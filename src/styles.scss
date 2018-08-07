@@ -246,6 +246,15 @@ a {
   color: var(--button-primary-color) !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .number-validation {
+    padding: 10px 5px 10px 15px !important;
+  }
+  .btn-lg {
+    padding: 15px 4px !important;
+  }
+}
+
 .navbar .navbar-nav .nav-link:not(.btn) svg.svg-inline--fa,
 .navbar .navbar-nav .nav-link:not(.btn) i.now-ui-icons,
 svg.svg-inline--fa {
@@ -354,7 +363,7 @@ ngb-datepicker .ngb-dp-header ngb-datepicker-navigation .ngb-dp-arrow-btn .ngb-d
 
 ngb-modal-window {
   .info-register {
-    display: none;
+    display: none !important;
   }
   .main-register {
     width: 100% !important;
@@ -373,5 +382,11 @@ ngb-modal-window {
   .modal-content {
     background-color: transparent;
     box-shadow: none;
+  }
+  .close {
+    display: block !important;
+  }
+  .card-signup {
+    width: 400px;
   }
 }

@@ -1,0 +1,65 @@
+.fa-chevron-left {
+  position: absolute;
+  left: 17px;
+  color: var(--button-primary-color) !important;
+  margin-top: 5px;
+}
+
+.form-check {
+  font-size: 12px;
+  margin-top: 30px;
+  text-align: center
+}
+
+.card-signup {
+  padding-bottom: 50px;
+}
+
+.input-group>.form-control:not(:last-child),
+.input-group>.custom-select:not(:last-child) {
+  border-top-right-radius: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  border-left: none;
+}
+
+input:focus>.input-group {
+  border-left: 1px solid #f96332 !important;
+}
+
+.padding-5 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: white;
+  color: #888;
+  cursor: pointer
+}
+
+.alert {
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .col-sm-5.mobile-number {
+    padding-right: 0px;
+  }
+  .col-sm-7.mobile-number {
+    padding-left: 5px;
+  }
+}
+
+.close {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}

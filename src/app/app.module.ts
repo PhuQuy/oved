@@ -20,6 +20,7 @@ import { LoginComponent } from './routes/login/login.component';
 import { RegisterComponent } from './routes/register/register.component';
 import { AuthGuard } from './core/auth.guard';
 import { SharedService } from './services/shared.service';
+import { RegisterModal } from './components/modals/register/register.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { SharedService } from './services/shared.service';
         HomeComponent,
         FooterComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        RegisterModal
     ],
     imports: [
         BrowserModule,
@@ -48,6 +50,6 @@ import { SharedService } from './services/shared.service';
         SharedService
     ],
     bootstrap: [AppComponent],
-    entryComponents: [RegisterComponent]
+    entryComponents: [RegisterModal]
 })
 export class AppModule { }

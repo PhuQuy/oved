@@ -5,7 +5,7 @@
       <div class="container">
         <div class="col-md-12 ml-auto mr-auto">
           <div class="row">
-            <div class="col-md-4 ml-auto mr-auto info-register">
+            <div class="col-md-4 ml-auto mr-auto info-register d-none d-sm-block">
               <div class="info info-horizontal">
                 <div class="icon icon-primary">
                   <i class="now-ui-icons media-2_sound-wave"></i>
@@ -41,8 +41,12 @@
               </div>
             </div>
             <div class="col-md-4 mr-auto main-register">
-              <div class="card card-signup">
+                <modal-register></modal-register>
+              <!-- <div class="card card-signup">
                 <div class="card-body">
+                  <button type="button" class="close" (click)="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                   <h4 class="card-title text-center">
                     <i (click)="previous()" [hidden]="step == 0" class="fas fa-chevron-left pointer"></i>Sign Up</h4>
                   <p>
@@ -135,7 +139,9 @@
                         I approve I'm 18 or older
                       </label>
                     </div>
-
+                    <div class="alert alert-danger" [hidden]="!birthdayError">
+                      <strong>Error!</strong> Please make sure you are older than 18 years old.
+                    </div>
                     <div class="text-center" style="margin-top: 40px; margin-bottom: 40px;">
                       <button type="button" [disabled]="!register.birthday || !et" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">NEXT</button>
                     </div>
@@ -144,14 +150,14 @@
                   <form class="form ng-untouched ng-pristine ng-valid" [hidden]="step != 4">
                     <p class="text-center" style=" margin-top: 1.75rem;">What's your mobile number?</p>
                     <div class="row">
-                      <div class="col-sm-5" style="padding-right: 0px;">
+                      <div class="col-sm-5 mobile-number">
                         <div class="form-group">
                           <select class="form-control" id="" [(ngModel)]="countryCode.code" placeholder="Search country" name="countryCode">
                             <option *ngFor="let code of countryCodes" [value]="code.code" [selected]="code.code == 'VN'">{{code.code}} + {{code.area_code}}</option>
                           </select>
                         </div>
                       </div>
-                      <div class="col-sm-7" style="padding-left: 5px;">
+                      <div class="col-sm-7 mobile-number">
                         <div class="form-group">
                           <input type="text" value="" placeholder="Number" name="phone" class="form-control" [(ngModel)]="phone" />
                         </div>
@@ -175,34 +181,34 @@
                       <a>{{register.phone}}</a>
                     </p>
                     <div class="row text-center">
-                      <div class="col-sm-2 padding-5" style="margin-left: 26px;">
+                      <div class="col-2 padding-5" style="margin-left: 26px;">
                         <div class="form-group">
-                          <input type="text" class="form-control" #numberRef1 (keypress)="nextFocus1($event)" [(ngModel)]="number1" name="number01"
-                            autocomplete="off" />
+                          <input type="text" class="form-control number-validation" #numberRef1 (keypress)="nextFocus1($event)" [(ngModel)]="number1"
+                            name="number01" autocomplete="off" />
                         </div>
                       </div>
-                      <div class="col-sm-2 padding-5">
+                      <div class="col-2 padding-5">
                         <div class="form-group">
-                          <input type="text" class="form-control" #numberRef2 (keypress)="nextFocus2($event)" [(ngModel)]="number2" name="number02"
-                            autocomplete="off" />
+                          <input type="text" class="form-control number-validation" #numberRef2 (keypress)="nextFocus2($event)" [(ngModel)]="number2"
+                            name="number02" autocomplete="off" />
                         </div>
                       </div>
-                      <div class="col-sm-2 padding-5">
+                      <div class="col-2 padding-5">
                         <div class="form-group">
-                          <input type="text" class="form-control" #numberRef3 (keypress)="nextFocus3($event)" [(ngModel)]="number3" name="number03"
-                            autocomplete="off" />
+                          <input type="text" class="form-control number-validation" #numberRef3 (keypress)="nextFocus3($event)" [(ngModel)]="number3"
+                            name="number03" autocomplete="off" />
                         </div>
                       </div>
-                      <div class="col-sm-2 padding-5">
+                      <div class="col-2 padding-5">
                         <div class="form-group">
-                          <input type="text" class="form-control" #numberRef4 (keypress)="nextFocus4($event)" [(ngModel)]="number4" name="number04"
-                            autocomplete="off" />
+                          <input type="text" class="form-control number-validation" #numberRef4 (keypress)="nextFocus4($event)" [(ngModel)]="number4"
+                            name="number04" autocomplete="off" />
                         </div>
                       </div>
-                      <div class="col-sm-2 padding-5">
+                      <div class="col-2 padding-5">
                         <div class="form-group">
-                          <input type="text" class="form-control" #numberRef5 [(ngModel)]="number5" (keypress)="nextFocus5($event)" name="number05"
-                            autocomplete="off" />
+                          <input type="text" class="form-control number-validation" #numberRef5 [(ngModel)]="number5" (keypress)="nextFocus5($event)"
+                            name="number05" autocomplete="off" />
                         </div>
                       </div>
                     </div>
@@ -241,6 +247,9 @@
                       <br> We really happy to have you onboard with us :)
                       <br> Let's dive in</p>
 
+                    <div class="alert alert-danger" [hidden]="!error">
+                      <strong>Error!</strong> {{error}}
+                    </div>
 
                     <div class="text-center" style="margin-top: 90px; margin-bottom: 10px;">
                       <button type="button" (click)="next()" class="btn btn-primary btn-lg btn-block mb-3">LET'S DO IT!</button>
@@ -256,7 +265,7 @@
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

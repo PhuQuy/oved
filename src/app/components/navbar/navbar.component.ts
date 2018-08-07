@@ -4,7 +4,8 @@ import { Auth } from '../../entities/auth';
 import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RegisterComponent } from '../../routes/register/register.component';
+import { RegisterModal } from './../modals/register/register.component';
+
 
 @Component({
     selector: 'app-navbar',
@@ -34,7 +35,13 @@ export class NavbarComponent implements OnInit {
     }
 
     signUp() {
-        this.modalService.open(RegisterComponent);
+        this.sidebarClose();
+        let windowWidth = window.screen.width;
+        if(windowWidth > 768) {
+            this.modalService.open(RegisterModal);
+        } else {
+            this.router.navigate(['/sign-up']);
+        }
     }
 
     ngOnInit() {
@@ -90,6 +97,7 @@ export class NavbarComponent implements OnInit {
         Auth.setToken(null);
         this.sharedService.toggle(null);
         this.token = null;
+        this.sidebarClose();
         this.router.navigate(['/login']);
     }
 }
